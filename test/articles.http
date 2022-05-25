@@ -1,0 +1,8 @@
+GET /localhost/1.1
+###
+POST /localhost/1.1
+###
+PATCH /localhost/1.1
+###
+DELETE /localhost/1.1
+
