@@ -1,0 +1,42 @@
+
+
+### Get all comments
+GET http://localhost:3000/commentaires
+
+### Get comments number
+GET http://localhost:3000/commentaires?number
+
+### Get comment by Id
+GET http://localhost:3000/commentaires/4
+
+### Get comment by Id
+GET http://localhost:3000/commentaires/99
+
+### Get comments of an article by Id
+GET http://localhost:3000/articles/5/commentaires
+
+### Add new comment
+POST http://localhost:3000/commentaires
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6MSwidXNlcm5hbWUiOiJBcmllbDE3IiwiZW1haWwiOiJUaG9tYXM0NEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjNKT3B1YVdTTlBUSSIsInJvbGUiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjEtMDQtMTFUMDc6NTQ6MjUuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjEtMDUtMTRUMDk6MTg6MTAuMDAwWiJ9LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjQyMTI5NTZ9.r1eHgye3y4X7gUGlykGkUVX4oj1c_9hrYVBZjjV-YvU
+
+{
+  "content": "This is a new content",
+  "ArticleId": 1
+}
+
+### Update a comment
+PUT http://localhost:3000/commentaires/11
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6MSwidXNlcm5hbWUiOiJBcmllbDE3IiwiZW1haWwiOiJUaG9tYXM0NEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjNKT3B1YVdTTlBUSSIsInJvbGUiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjEtMDQtMTFUMDc6NTQ6MjUuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjEtMDUtMTRUMDk6MTg6MTAuMDAwWiJ9LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjQyMTI5NTZ9.r1eHgye3y4X7gUGlykGkUVX4oj1c_9hrYVBZjjV-YvU
+
+{
+  "content": "This is an update content",
+  "ArticleId": 1
+}
+
+### Delete a comment by Id
+DELETE http://localhost:3000/commentaires/11
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6MSwidXNlcm5hbWUiOiJBcmllbDE3IiwiZW1haWwiOiJUaG9tYXM0NEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjNKT3B1YVdTTlBUSSIsInJvbGUiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjEtMDQtMTFUMDc6NTQ6MjUuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjEtMDUtMTRUMDk6MTg6MTAuMDAwWiJ9LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjQyMTI5NTZ9.r1eHgye3y4X7gUGlykGkUVX4oj1c_9hrYVBZjjV-YvU
+
+

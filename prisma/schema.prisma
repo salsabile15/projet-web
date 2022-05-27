@@ -6,18 +6,52 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql" 
-  //MARIAB?
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
-model user{
-  id Int @id @default(autoincrement())
-  email String @unique
-  name String
-  role ROLE @default(USER)
+
+model user {
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  email     String    @unique
+  name      String?
+  passwrd String?
+  role ROLE @default(GUEST)
+  comments  commentaire[]
+  posts     article[]
 }
 enum ROLE{
   ADMIN 
   AUTHOR
-  USER 
+  GUEST
+}
+model article {
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  title     String
+  content   String?
+  published Boolean   @default(false)
+  authorId  Int
+  image String?
+  author    user      @relation(fields: [authorId], references: [id])
+  comments  commentaire[]
+  categor categorie[] @relation("TagToPost")
+}
+
+model commentaire {
+  id          Int      @id @default(autoincrement())
+  createdAt   DateTime @default(now())
+  comment     String
+  writtenById Int
+  postId      Int
+  writtenBy   user     @relation(fields: [writtenById], references: [id])
+  post        article     @relation(fields: [postId], references: [id], onUpdate: NoAction)
+}
+
+model categorie {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  nom     String  
+  articles article[] @relation("TagToPost")
 }

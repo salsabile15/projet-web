@@ -1,5 +1,5 @@
 {
-  "name": "fin-module",
+  "name": "projet-web",
   "version": "0.0.0",
   "private": true,
   "scripts": {
@@ -12,5 +12,9 @@
     "express": "~4.16.1",
     "morgan": "~1.9.1",
     "prisma": "^3.14.0"
+  },
+  "devDependencies": {
+    "faker": "^6.6.6"
   }
+
 }

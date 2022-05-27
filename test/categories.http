@@ -1,0 +1,32 @@
+### get categories number
+GET http://localhost:3000/categories?number
+
+### Get categories by Id
+GET http://localhost:3000/categories/3
+
+### Add new categories
+POST http://localhost:3000/tags
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6MSwidXNlcm5hbWUiOiJBcmllbDE3IiwiZW1haWwiOiJUaG9tYXM0NEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjNKT3B1YVdTTlBUSSIsInJvbGUiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjEtMDQtMTFUMDc6NTQ6MjUuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjEtMDUtMTRUMDk6MTg6MTAuMDAwWiJ9LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjQyMTI5NTZ9.r1eHgye3y4X7gUGlykGkUVX4oj1c_9hrYVBZjjV-YvU
+
+{
+  "name": "categorie 1"
+}
+
+### Update a categories
+PUT http://localhost:3000/categories/11
+content-type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6eyJpZCI6MSwidXNlcm5hbWUiOiJBcmllbDE3IiwiZW1haWwiOiJUaG9tYXM0NEBnbWFpbC5jb20iLCJwYXNzd29yZCI6IjNKT3B1YVdTTlBUSSIsInJvbGUiOiJhZG1pbiIsImNyZWF0ZWRBdCI6IjIwMjEtMDQtMTFUMDc6NTQ6MjUuMDAwWiIsInVwZGF0ZWRBdCI6IjIwMjEtMDUtMTRUMDk6MTg6MTAuMDAwWiJ9LCJyb2xlIjoiYWRtaW4iLCJpYXQiOjE2MjQyMTI5NTZ9.r1eHgye3y4X7gUGlykGkUVX4oj1c_9hrYVBZjjV-YvU
+
+{
+  "name": "categorie 2"
+}
+
+### Login to get JWT token
+POST http://localhost:3000/users/login
+content-type: application/json
+
+{
+  "email": "MASSABIH@gmail.com",
+  "password": "massabih123"
+}
